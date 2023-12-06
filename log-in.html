@@ -10,15 +10,16 @@
 <body>
     <div class="container">
         <h2>Pocket Free</h2>
-            <form action="" onsubmit="event()">
+            <form onsubmit="return validateForm()">
                 <div class="field">
-                    <input type="text" id="userid"  placeholder="Username" >
+                    <input type="text" id="username"  placeholder="Username" >
                 </div>
+
                 <div class="field">
-                    <input type="password" id="pass"  placeholder="Password">
+                    <input type="password" id="password"  placeholder="Password">
                 </div>
                 <div class="field-button">
-                    <button type="submit" id="submit-btn" onclick="event()">Log in</button>
+                    <button type="submit" id="submit-btn">Log in</button>
                 </div>
             </form>
     </div>
