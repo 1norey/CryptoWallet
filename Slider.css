@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1F2833;
+    color: #45A29E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #45A29E;
+    margin-top: 50px;
+    font-size: 36px; 
+}
+
+.slider-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.go-back-button {
+    position: absolute;
+    top: 55px;
+    left: 45px; 
+    background-color: #45A29E;
+    color: #1F2833;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.slide {
+    display: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.fade {
+    animation: fadeAnimation 10s ease-in-out infinite; 
+}
+
+@keyframes fadeAnimation {
+    from {
+        opacity: 0.8;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.slider-controls {
+    margin-top: 20px; 
+}
+
+.control-button {
+    background-color: #45A29E;
+    color: #1F2833;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    margin: 0 5px; 
+}   
