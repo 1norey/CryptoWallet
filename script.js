@@ -1,29 +1,22 @@
+let usernameRegex = /^[a-zA-Z.-_]{3,10}$/;
+let passwordRegex = /^[A-Za-z!?\d._-]{6,}$/;
+
 function validateForm() {
-    validateForm.preventDefault();
+    let usernameInput = document.getElementById('username');
+    let passwordInput = document.getElementById('password');
+    let usernameError = document.getElementById('usernameError');
+    let passwordError = document.getElementById('passwordError');
 
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
+    usernameError.innerText = '';
+    passwordError.innerText = '';
 
-    if (username.value === "" ) {
-        alert("Please enter a valid username.");
-        username.focus();
-        return false;
+    if (!usernameRegex.test(usernameInput.value)) {
+        usernameError.innerText = 'Username must contain at least 3 characters!';
+        return;
     }
-    if (password.value === "" ) {
-        alert("Please enter a valid password.");
-        password.focus();
-        return false;
+    if (!passwordRegex.test(passwordInput.value)) {
+        passwordError.innerText = 'Password must contain at least 6 characters!';
+        return;
     }
-    let usernameRegex = /^[a-zA-Z0-9._-]\s+$/;
-    if (!usernameRegex.test(username.toLowerCase())) {
-        alert("Username can only contain letters (a-z, A-Z) and numbers (0-9).");
-        return false;
-    }
-    let passwordRegex = /^[a-zA-Z0-9.-_!?]\s+$/;
-    if (!passwordRegex.test(password)) {
-        alert("Password can only contain letters (a-z, A-Z) and numbers (0-9).");
-        return false;
-    }
-
-    return true; 
+    alert("Form submitted successfully!");
 }
