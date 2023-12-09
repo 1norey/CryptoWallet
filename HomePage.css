@@ -10,23 +10,22 @@ header {
     color: #45A29E;
     padding: 10px 20px;
     text-align: center;
-   
 }
 
 nav {
     background-color: #45A29E;
     overflow: hidden;
+    display: flex;
+    justify-content: center; /* Center the nav bar horizontally */
 }
 
 nav a {
-    float: left;
     display: block;
     color: #333;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
-
 
 nav a:hover {
     background-color: #919191;
@@ -36,21 +35,27 @@ nav a:hover {
 section {
     padding: 20px;
 }
-.content{
+
+.content {
     margin-top: 12%;
 }
-.content h1{
+
+.content h1 {
     font-size: 86px;
     margin-bottom: 16px;
 }
-.content h1 span{
+
+.content h1 span {
     color: #51fff6;
 }
-.content p{
+
+.content p {
     line-height: 24px;
     font-size: 14;
+    color: rgb(231, 248, 252);
 }
-.content .btn{
+
+.content .btn {
     display: inline-block;
     margin-top: 30px;
     background: #51fff6;
@@ -59,17 +64,20 @@ section {
     text-decoration: none;
     padding: 15px 30px;
 }
-.content .btn:hover{
+
+.content .btn:hover {
     background: #45A29E;
 }
-.coin-list{
+
+.coin-list {
     position: absolute;
     right: 10%;
     bottom: 50px;
     display: flex;
     align-items: center;
 }
-.coin{
+
+.coin {
     display: flex;
     align-items: center;
     font-size: 14px;
@@ -79,11 +87,11 @@ section {
     padding: 20px 30px;
     border-radius: 8px;
 }
-.coin img{
+
+.coin img {
     width: 40px;
     margin-right: 10px;
 }
-
 
 footer {
     background-color: #333;
@@ -93,4 +101,16 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+.login-register-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.login-register-buttons a {
+    color: #45A29E;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 16px;
 }
