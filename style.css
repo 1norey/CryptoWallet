@@ -93,3 +93,9 @@ form .text h3 a{
 form .text h3 a:hover{
   text-decoration: underline;
 }
+.error-message {
+  background-color: rgba(7, 6, 6, 0.1); 
+  color: rgb(144, 44, 44); 
+  font-size: 14px;
+  margin-top: 0px;
+}
