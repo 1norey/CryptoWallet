@@ -6,7 +6,7 @@
             let emailInput = document.getElementById('email');
             let nameError = document.getElementById('nameError');
             let emailError = document.getElementById('emailError');
-s
+
             nameError.innerText = '';
             emailError.innerText = '';
 
