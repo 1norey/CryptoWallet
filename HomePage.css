@@ -16,7 +16,7 @@ nav {
     background-color: #45A29E;
     overflow: hidden;
     display: flex;
-    justify-content: center; /* Center the nav bar horizontally */
+    justify-content: center; 
 }
 
 nav a {
