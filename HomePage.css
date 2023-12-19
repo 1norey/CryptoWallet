@@ -114,3 +114,68 @@ footer {
     margin-right: 20px;
     font-size: 16px;
 }
+@media only screen and (max-width: 1200px) {
+    .content h1 {
+        font-size: 72px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .content h1 {
+        font-size: 60px;
+    }
+    .content p {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .content h1 {
+        font-size: 48px;
+    }
+    .content p {
+        font-size: 12px;
+    }
+    .coin-list {
+        right: 5%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .content h1 {
+        font-size: 36px;
+    }
+    .content p {
+        font-size: 12px;
+    }
+    .coin-list {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .content h1 {
+        font-size: 30px;
+    }
+    .content p {
+        font-size: 10px;
+    }
+    .content .btn {
+        padding: 10px 20px;
+    }
+    .login-register-buttons a {
+        margin: 5px;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .content h1 {
+        font-size: 24px;
+    }
+    .content p {
+        font-size: 10px;
+    }
+    .login-register-buttons a {
+        margin: 5px;
+    }
+}
