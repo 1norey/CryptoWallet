@@ -99,3 +99,32 @@ form .text h3 a:hover{
   font-size: 14px;
   margin-top: 0px;
 }
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    padding: 8vw;
+  }
+
+  .wrapper h2 {
+    font-size: 7vw;
+  }
+
+  .wrapper h2::before {
+    height: 2vw;
+  }
+
+  .wrapper form .input-box {
+    height: 12vw;
+    margin: 5vw 0;
+  }
+
+  form .input-box input {
+    font-size: 5vw;
+    padding: 0 5vw;
+  }
+
+  form h3 {
+    font-size: 3vw;
+    margin-left: 1.5vw;
+  }
+}
