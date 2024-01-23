@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
 body {
     min-height: 100vh;
     display: flex;
@@ -14,53 +15,70 @@ body {
 
 .container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #45A29E;
-    padding: 40px;
+    padding: 4vw; 
     border-radius: 6px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    flex-wrap: wrap;
+    width: 100%;
+    max-width: 600px; 
 }
 
 .container h2 {
-    position: relative;
-    font-size: 22px;
+    font-size: 2.5vw;
     font-weight: 600;
     color: #333;
+    margin-bottom: 2vw; 
 }
 
 .container form {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 30px;
-
+    margin-top: 1vw; 
+    margin-bottom: 1vw; 
+    margin-left: 2vw; 
 }
 
 .field {
-    padding: 5px 5px;
-    border-radius: px;
+    padding: 1vw; 
+    border-radius: 6px;
+    width: 100%;
+    margin-bottom: 2vw; 
 }
 
 button {
-    border-radius: 9px;
-    margin: 5px;
+    border-radius: 1vw; 
+    margin: 1vw;
     background-color: #333;
     color: #45A29E;
-    margin: 45px px 30px 0px;
-    height: 20px;
-    width: 50px;
-    display: flex;
-    justify-content: center;
+    margin-top: 2vw; 
+    width: 100%;
 }
 
 button:hover {
     background-color: #1F2833;
 }
+
 .error-message {
-    background-color: rgba(23, 19, 19, 0.1); 
-    color: rgb(144, 44, 44); 
-    padding: 5px; 
-    margin-top: 5px; 
-    border-radius: 5px; 
+    background-color: rgba(23, 19, 19, 0.1);
+    color: rgb(144, 44, 44);
+    padding: 1vw;
+    margin-top: 1vw; 
+    border-radius: 5px;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .container {
+        padding: 5vw;
+    }
+
+    .field {
+        margin-left: 0;
+    }
+
+    button {
+        margin: 2vw 0;
+    }
+}
+             
