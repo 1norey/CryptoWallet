@@ -19,7 +19,7 @@
             <button type="submit">Submit</button>
         </form>
     </div>
-    <button><a href="home-page.html">Home Page</a></button>
+    <button><a href="home-page.php">Home Page</a></button>
     
 </body>
 </html>

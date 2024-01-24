@@ -11,18 +11,18 @@
 <body>
     <header>
         <div class="login-register-buttons">
-            <a href="index.html">Register</a>
-            <a href="log-in.html">Login</a>
+            <a href="index.php">Register</a>
+            <a href="log-in.php">Login</a>
         </div>
     </header>
 <div class="container">
     <nav>
         <div class="nav-bar"><a href="#">Home</a></div>
-        <div class="nav-bar"><a href="market.html">Market</a></div>
+        <div class="nav-bar"><a href="market.php">Market</a></div>
         <div class="nav-bar"><a href="#portfolio">Portfolio</a></div>
-        <div class="nav-bar"><a href="slider.html">ROTG</a></div>
-        <div class="nav-bar"><a href="About-Us.html">About Us</a></div>
-        <div class="nav-bar"><a href="contact-us.html">Contact Us</a></div>
+        <div class="nav-bar"><a href="slider.php">ROTG</a></div>
+        <div class="nav-bar"><a href="About-Us.php">About Us</a></div>
+        <div class="nav-bar"><a href="contact-us.php">Contact Us</a></div>
     </nav>
 </div>
 

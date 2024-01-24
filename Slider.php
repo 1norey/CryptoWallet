@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <a href="home-page.html" class="go-back-button">Go Back to Home Page</a>
+    <a href="home-page.php" class="go-back-button">Go Back to Home Page</a>
     <h1>Rules Of The Game</h1>
     <div class="slider-container">
         <div class="slide fade">

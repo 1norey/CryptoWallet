@@ -13,7 +13,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-heading">Market Updates</h2>
-                <a href="home-page.html" class="home-button">Go to Home</a>
+                <a href="home-page.php" class="home-button">Go to Home</a>
             </div>
             <div class="market-type">
 
