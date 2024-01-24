@@ -43,9 +43,10 @@
         <input type="submit" value="Register Now">
       </div>
       <div class="text">
-        <h3>Already have an account? <a href="log-in.html">Login now</a></h3>
+        <h3>Already have an account? <a href="log-in.php">Login now</a></h3>
       </div>
     </form>
   </div>
+  <?php include_once 'registerController.php';?>
 </body>
 </html>

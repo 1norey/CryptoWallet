@@ -1,3 +1,15 @@
+<?php
+  session_start();
+  $hide="";
+  if(!isset($_SESSION['username']))
+    header("location:log-in.php");
+  else{
+    if($_SESSION['role'] == "admin")
+      $hide = "";
+    else
+      $hide = "hide";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +19,16 @@
    <link rel="stylesheet" href="HomePage.css">
    <script src="https://code.jquery.com/jquery-3.7.1.min.js"integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="crossorigin="anonymous"></script>
    <script src="Home-pageJS.js"></script>
+ 
 </head>
 <body>
     <header>
         <div class="login-register-buttons">
             <a href="index.php">Register</a>
             <a href="log-in.php">Login</a>
+            <a href="dashboard.php">Dashboard</a>
+            <a href="logout.php">Log Out</a>
+            
         </div>
     </header>
 <div class="container">
@@ -68,3 +84,7 @@
 
 </body>
 </html>
+
+<?php
+  }
+?>
