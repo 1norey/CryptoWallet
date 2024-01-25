@@ -152,9 +152,9 @@
                 <tr>
                 <td>{$coin['ID']}</td>
                 <td>{$coin['Name']}</td>
-                <td>{$coin['Price']}</td>
-                <td>{$coin['Last_24h']}</td>
-                <td>{$coin['Market_Cap']}</td>
+                <td>€{$coin['Price']}</td>
+                <td>{$coin['Last_24h']}%</td>
+                <td>€{$coin['Market_Cap']}</td>
                 <td>{$coin['Last_7_Days']}</td>
                 </tr>
                 ";

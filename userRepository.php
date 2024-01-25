@@ -71,7 +71,6 @@ class UserRepository{
         $sql = "DELETE FROM users WHERE id=?";
 
         $statement = $conn->prepare($sql);
-s
         $statement->execute([$id]);
 
         echo "<script>alert('delete was successful'); </script>";
