@@ -9,7 +9,7 @@
 <body>
     <div class="heading">
         <h1>About Us</h1>
-        <a href="home-page.html" class="home-button">Go Back To Home Page</a>
+        <a href="home-page.php" class="home-button">Go Back To Home Page</a>
     </div>
     <div class="container">
         <section class="About">
