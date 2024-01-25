@@ -1,47 +1,28 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "cryptodb";
-
-$database = new Database($servername, $username, $password, $dbname);
-$conn = $database->getConnection();
-
-$user = new User($conn);
-$loginController = new LoginController($user);
 
 
-class Database {
-    private $servername;
-    private $username;
-    private $password;
-    private $dbname;
-    private $conn;
 
-    public function __construct($servername, $username, $password, $dbname) {
-        $this->servername = $servername;
-        $this->username = $username;
-        $this->password = $password;
-        $this->dbname = $dbname;
+class Database{
+    private $server="localhost";
+    private $username="root";
+    private $password="";
+    private $database = "cryptodb";
 
-        $this->connect();
-    }
 
-    private function connect() {
-        $this->conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
+    function startConnection(){
 
-        if ($this->conn->connect_error) {
-            die("Connection failed: " . $this->conn->connect_error);
+        try{
+            $conn = new PDO("mysql:host=$this->server;dbname=$this->database",$this->username,$this->password);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $conn;
+        }catch(PDOException $e){
+            echo "Database Conenction Failed".$e->getMessage();
+            return null;
         }
-    }
 
-    public function getConnection() {
-        return $this->conn;
-    }
 
-    public function closeConnection() {
-        $this->conn->close();
     }
 }
+
 
 ?>

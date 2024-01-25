@@ -236,6 +236,8 @@
                                 </div>
                             </td>
 
+                
+
                             <td class="table-data last-price">$56,623.54</td>
 
                             <td class="table-data last-update green">+1.45%</td>

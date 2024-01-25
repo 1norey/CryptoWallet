@@ -1,38 +1,44 @@
 <?php
 
-include 'Database.php';
+include_once 'Database.php';
 
-class LoginController {
-    private $user;
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['loginBtn'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
-    public function __construct($user) {
-        $this->user = $user;
-    }
+        if (empty($username) || empty($password)) {
+            echo "Username and password are required.";
+            exit;
+        }
 
-    public function attemptLogin($username, $password) {
-        $user = $this->user->authenticate($username, $password);
+        $dbConnection = new Database();
+        $conn = $dbConnection->startConnection();
 
-        if ($user !== null) {
-            if ($user['role'] == 'admin') {
-                header("Location: dashboard.php");
-                exit();
+        if ($conn) {
+            $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username AND password = :password");
+            $stmt->bindParam(':username', $username);
+            $stmt->bindParam(':password', $password);
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+                $userData = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                if ($userData['role'] == 'admin') {
+                    header("Location: dashboard.php");
+                } elseif ($userData['role'] == 'user') {
+                    header("Location: home-page.php");
+                } else {
+                    echo "Unknown user role.";
+                    exit;
+                }
             } else {
-                header("Location: home-page.php");
-                exit();
+                echo "Invalid username or password.";
             }
         } else {
-            echo "Invalid username or password.";
+            echo "Database connection failed.";
         }
     }
 }
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-
-            $loginController->attemptLogin($username, $password);
-    }
-
-            $database->closeConnection();
-
 
 ?>

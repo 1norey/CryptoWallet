@@ -5,7 +5,7 @@ class UserRepository{
     private $connection;
 
     function __construct(){
-        $conn = new DatabaseConenction;
+        $conn = new Database;
         $this->connection = $conn->startConnection();
     }
 
@@ -21,7 +21,7 @@ class UserRepository{
         $username = $user->getUsername();
         $password = $user->getPassword();
 
-        $sql = "INSERT INTO user (id,name,age,email,username,password) VALUES (?,?,?,?,?,?)";
+        $sql = "INSERT INTO users (id,name,age,email,username,password) VALUES (?,?,?,?,?,?)";
 
         $statement = $conn->prepare($sql);
 
@@ -34,7 +34,7 @@ class UserRepository{
     function getAllUsers(){
         $conn = $this->connection;
 
-        $sql = "SELECT * FROM user";
+        $sql = "SELECT * FROM users";
 
         $statement = $conn->query($sql);
         $users = $statement->fetchAll();
@@ -45,7 +45,7 @@ class UserRepository{
     function getUserById($id){
         $conn = $this->connection;
 
-        $sql = "SELECT * FROM user WHERE id='$id'";
+        $sql = "SELECT * FROM users WHERE id='$id'";
 
         $statement = $conn->query($sql);
         $user = $statement->fetch();
@@ -56,7 +56,7 @@ class UserRepository{
     function updateUser($id,$name,$surname,$email,$username,$password){
          $conn = $this->connection;
 
-         $sql = "UPDATE user SET name=?, age=?, email=?, username=?, password=? WHERE id=?";
+         $sql = "UPDATE users SET name=?, age=?, email=?, username=?, password=? WHERE id=?";
 
          $statement = $conn->prepare($sql);
 
@@ -68,13 +68,34 @@ class UserRepository{
     function deleteUser($id){
         $conn = $this->connection;
 
-        $sql = "DELETE FROM user WHERE id=?";
+        $sql = "DELETE FROM users WHERE id=?";
 
         $statement = $conn->prepare($sql);
-
+s
         $statement->execute([$id]);
 
         echo "<script>alert('delete was successful'); </script>";
    } 
+   function getAllMsg(){
+    $conn = $this->connection;
+
+    $sql = "SELECT * FROM contact_us";
+
+    $statement = $conn->query($sql);
+    $messages= $statement->fetchAll();
+
+    return $messages;
+}
+
+    function getAllCoins(){
+    $conn = $this->connection;
+
+    $sql = "SELECT * FROM market_coins";
+
+    $statement = $conn->query($sql);
+    $coins= $statement->fetchAll();
+
+    return $coins;
+}
 }
 ?>

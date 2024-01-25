@@ -18,6 +18,7 @@ if(isset($_POST['registerBtn'])){
         $userRepository = new UserRepository();
 
         $userRepository->insertUser($user);
+        header("Location: home-page.php");
 
 
     }
