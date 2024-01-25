@@ -38,7 +38,7 @@
             <p>Take your experience to the next level
             <br>with our new platform that allows you to perform
             <br>services accurately and quickly </p>
-            <a href="#" class="btn">Find out more</a>
+            <a href="About-Us.php" class="btn">Find out more</a>
        </div>
        <div class="digitalWallet">
         <img src="DigitalWalletGold.jpg" alt="">
