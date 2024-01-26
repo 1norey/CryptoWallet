@@ -16,7 +16,16 @@
         <div class="login-register-buttons">
             <a href="index.php">Register</a>
             <a href="log-in.php">Login</a>
-            <a href="dashboard.php">Dashboard</a>
+            <?php
+
+        session_start();
+
+        $isAdmin = isset($_SESSION['user_data']) && $_SESSION['user_data']['role'] === 'admin';
+
+        if ($isAdmin) {
+          echo "<a href=\"dashboard.php\">Dashboard</a>";
+        }
+        ?>
             <a href="logout.php">Log Out</a>
             
         </div>

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include_once 'Database.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -23,6 +23,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if ($stmt->rowCount() > 0) {
                 $userData = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                $_SESSION["user_data"] = array(
+                    "id"=>$userData['id'],
+                    "name" => $userData['name'], 
+                    "role" => $userData['role'],
+                );
 
                 if ($userData['role'] == 'admin') {
                     header("Location: dashboard.php");

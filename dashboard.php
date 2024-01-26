@@ -84,6 +84,14 @@
              </tr>
 
              <?php 
+             session_start();
+
+             $isAdmin = isset($_SESSION['user_data']) && $_SESSION['user_data']['role'] === 'admin';
+     
+             if (!$isAdmin) {
+                 header("Location: home-page.php");
+                 exit();
+             }
              include_once 'userRepository.php';
 
              $userRepository = new UserRepository();

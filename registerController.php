@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once 'userRepository.php';
 include_once 'user.php';
 
@@ -19,7 +20,11 @@ if(isset($_POST['registerBtn'])){
 
         $userRepository->insertUser($user);
         header("Location: home-page.php");
-
+        $_SESSION["user_data"] = array(
+            "id" => $id,
+            "name" =>$name,
+            "role" => 'user'
+        );
 
     }
 }
