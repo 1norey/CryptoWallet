@@ -49,6 +49,22 @@
         a:hover {
             text-decoration: underline;
         }
+        .custom-button {
+        display: inline-block;
+        padding: 10px 20px;
+        text-decoration: none;
+        background-color: #45A29E;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-bottom: 20px;
+    }
+
+    .custom-button:hover {
+        background-color: #35807C; 
+    }
     </style>
 </head>
 <body>
@@ -128,6 +144,8 @@
     </table>
     <br><br>
     <h1>Market Coins</h1>
+    <a href="addCoin.php" class="custom-button">Add New Coin</a>
+
     <table border="1">
              <tr>
                  <th>ID</th>
@@ -136,6 +154,8 @@
                  <th>LAST 24H</th>
                  <th>MARKET CAP</th>
                  <th>LAST 7 DAYS</th>
+                 <th>Edit</th>
+                 <th>Delete</th>
                
              </tr>
 
@@ -156,6 +176,8 @@
                 <td>{$coin['Last_24h']}%</td>
                 <td>€{$coin['Market_Cap']}</td>
                 <td>{$coin['Last_7_Days']}</td>
+                <td><a href='editCoin.php?id={$coin['ID']}'>Edit</a></td>
+                <td><a href='deleteCoin.php?id={$coin['ID']}'>Delete</a></td>
                 </tr>
                 ";
              }

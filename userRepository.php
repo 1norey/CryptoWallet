@@ -116,5 +116,61 @@ class UserRepository{
 
 }
 
+    function getCoinById($id){
+    $conn = $this->connection;
+
+    $sql = "SELECT * FROM market_coins WHERE id='$id'";
+
+    $statement = $conn->query($sql);
+    $coin = $statement->fetch();
+
+    return $coin;
+}
+
+    function updateCoin($id,$name,$price,$last_24h,$market_cap,$last_7_days){
+    $conn = $this->connection;
+
+    $sql = "UPDATE market_coins SET name=?, price=?, last_24h=?, market_cap=?, last_7_days=? WHERE id=?";
+
+    $statement = $conn->prepare($sql);
+
+    $statement->execute([$name, $price, $last_24h, $market_cap, $last_7_days, $id]);
+
+
+    echo "<script>alert('Update was successful'); </script>";
+}
+
+    function deleteCoin($id){
+    $conn = $this->connection;
+
+    $sql = "DELETE FROM market_coins WHERE id=?";
+
+    $statement = $conn->prepare($sql);
+
+    $statement->execute([$id]);
+
+    echo "<script>alert('Delete was successful'); </script>";
+}
+    function insertCoin($coin){
+
+    $conn = $this->connection;
+
+    $id = $coin->getId();
+    $name = $coin->getName();
+    $price = $coin->getPrice();
+    $last_24h = $coin->getLast_24h();
+    $market_cap = $coin->getMarket_Cap();
+    $last_7_Days = $coin->getLast7Days();
+
+    $sql = "INSERT INTO market_coins (id,name,price,last_24h,market_cap,last_7_Days) VALUES (?,?,?,?,?,?)";
+
+    $statement = $conn->prepare($sql);
+
+    $statement->execute([$id,$name,$price,$last_24h,$market_cap,$last_7_Days]);
+
+    echo "<script> alert('Coin has been inserted successfuly!'); </script>";
+
+}
+
 }
 ?>
