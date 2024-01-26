@@ -9,14 +9,15 @@
 </head>
 <body>
     <div class="wrapper">
-        <form onsubmit="event.preventDefault(); validateForm();">
+        <form action="contactController.php" method="post">
             <h1>Contact Us</h1>
-            <input type="text" id="name" placeholder="Name Surname">
+            <input type="text" id="name" name="name" placeholder="Name Surname">
             <div id="nameError" class="error"></div>
-            <input type="text" id="email" placeholder="Email">
+            <input type="text" id="email" name="email" placeholder="Email">
             <div id="emailError" class="error"></div>
-            <textarea cols="30" rows="10" placeholder="Message"></textarea>
-            <button type="submit">Submit</button>
+            <textarea cols="30" rows="10" name="message" placeholder="Message"></textarea>
+            <!-- <button type="submit">Submit</button> -->
+            <input type="submit" name="submitBtn" value="Submit">
         </form>
     </div>
     <button><a href="home-page.php">Home Page</a></button>

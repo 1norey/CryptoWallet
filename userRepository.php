@@ -96,5 +96,25 @@ class UserRepository{
 
     return $coins;
 }
+
+    function insertMessage($message){
+
+    $conn = $this->connection;
+
+    $id = $message->getId();
+    $name = $message->getName();
+    $email = $message->getEmail();
+    $message = $message->getMessage();
+
+    $sql = "INSERT INTO contact_us (id,name,email,message) VALUES (?,?,?,?)";
+
+    $statement = $conn->prepare($sql);
+
+    $statement->execute([$id,$name,$email,$message]);
+
+    echo "<script> alert('Your message was sent successfuly!'); </script>";
+
+}
+
 }
 ?>
