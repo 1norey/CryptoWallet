@@ -120,7 +120,7 @@
              ?>
     </table>
     <br><br>
-    <h1>Contac Us</h1>
+    <h1>Contact Us</h1>
     <table border="1">
              <tr>
                  <th>ID</th>
