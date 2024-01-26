@@ -37,13 +37,39 @@ body {
     margin-top: 1vw; 
     margin-bottom: 1vw; 
     margin-left: 2vw; 
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 
 .field {
     padding: 1vw; 
     border-radius: 6px;
     width: 100%;
     margin-bottom: 2vw; 
+    margin: 0 auto; 
+    margin-bottom: 2vw;
+}
+
+.field-button {
+    width: 100%;
+}
+
+input[type="submit"] {
+    border-radius: 1vw;
+    margin: 1vw;
+    background-color: #333;
+    color: #45A29E;
+    width: 85%; 
+    padding: 1vw;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #1F2833;
 }
 
 button {

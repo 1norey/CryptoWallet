@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 );
 
                 if ($userData['role'] == 'admin') {
-                    header("Location: dashboard.php");
+                    header("Location: home-page.php");
                 } elseif ($userData['role'] == 'user') {
                     header("Location: home-page.php");
                 } else {
@@ -39,10 +39,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     exit;
                 }
             } else {
-                echo "Invalid username or password.";
+                echo "<script> alert('Your username or password is incorrect!'); window.location.href='log-in.php'; </script>";
             }
         } else {
-            echo "Database connection failed.";
+            echo "<script> alert('Database Connection Failed!'); window.location.href='log-in.php'; </script>";
         }
     }
 }

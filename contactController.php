@@ -10,7 +10,7 @@ if(isset($_POST['submitBtn'])){
         $email = $_POST['email'];
         $message = $_POST['message'];
 
-        $messageObj = new Contact($id, $name, $email, $message);
+        $messageObj = new Contact($name, $email, $message);
         $userRepository = new UserRepository();
 
         $userRepository->insertMessage($messageObj);

@@ -112,8 +112,6 @@ class UserRepository{
 
     $statement->execute([$id,$name,$email,$message]);
 
-    echo "<script> alert('Your message was sent successfuly!'); </script>";
-
 }
 
     function getCoinById($id){

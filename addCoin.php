@@ -17,7 +17,9 @@
             margin: 0;
             padding: 0;
         }
-
+        h2{
+            margin-right:5px;
+        }
         form {
             background-color: #45A29E;
             padding: 20px;
@@ -48,6 +50,7 @@
     </style>
 </head>
 <body>
+    <h2>Pocket Free Market Coins</h2>
     <form action="addCoinController.php" method="post">
         <input type="text" name="name" placeholder="Name..."> <br><br>
         <input type="text" name="price" placeholder="Price..."> <br><br>

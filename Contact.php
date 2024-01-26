@@ -6,8 +6,8 @@ class Contact{
     private $email;
     private $message;
 
-    function __construct($id,$name,$email,$message){
-            $this->id = $id;
+    function __construct($name,$email,$message){
+    
             $this->name = $name;
             $this->email = $email;
             $this->message = $message;
